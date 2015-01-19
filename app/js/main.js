@@ -63,49 +63,57 @@ var siteHandler = {
 	init: function() {
 		this.loadTemplate('home', '#mainWrapper');
 
-		/*// Provide your access token
-		L.mapbox.accessToken = 'pk.eyJ1Ijoiam9zZW5tYXIiLCJhIjoiRTBnY2plZyJ9.16b9pM_DfVdunAs6jZmE-A';
-		// Create a map in the div #map
-		L.mapbox.map('map', 'josenmar.fac6fc28');*/
+		mapboxgl.util.getJSON('https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v6.json', function(err,style){
+			if (err) throw err;
 
-		//af9d9d26 municipios
-		mapboxgl.accessToken = 'pk.eyJ1IjoiYXlvemVtaXRjYW5ldCIsImEiOiJBd0VOLTZjIn0.A4XIkQqKKcCp6pvhrFidVA';
-		var map = new mapboxgl.Map({
-		  container: 'map', // container id
-		  style: 'https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v6.json', //stylesheet location
-		  center: [40, -74.50], // starting position
-		  zoom: 9 // starting zoom
+			style.layers.push({
+				"id": "markers",
+			    "type": "symbol",
+			    "source": "markers",
+			    "layout": {
+			      "icon-image": "{marker-symbol}-12",
+			      "text-field": "{title}",
+			      "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+			      "text-offset": [0, 0.6],
+			      "text-anchor": "top"
+			    },
+			    "paint": {
+			      "text-size": 12,
+			      "text-halo-color": "white",
+			      "text-halo-width": 2
+			    }
+			});
+			mapboxgl.accessToken = 'pk.eyJ1IjoiYXlvemVtaXRjYW5ldCIsImEiOiJBd0VOLTZjIn0.A4XIkQqKKcCp6pvhrFidVA';
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: style,
+				center: [28.0779, -16.1676],
+				zoom: 11,
+				// causes pan & zoom handlers not to be applied, similar to
+				// .dragging.disable() and other handler .disable() funtions in Leaflet.
+				interactive: true,
+				hash:true
+			});
+			var file = 'js/geojson/vieja.geojson';
+			mapboxgl.util.getJSON(file, function(err,data){
+				map.on('click', function(e){
+				  console.log(e);
+				});
+				var geojson = data;
+				var markers = new mapboxgl.GeoJSONSource({data: geojson });
+				map.addSource('markers',markers);
+				console.log(map.sources);
+				console.log(style);
+				map.addControl(new mapboxgl.Navigation());
+				//map.style.addClass('night');
+			});
+
 		});
 
-		//L.control.scale().addTo(map);
+		function lanesStyle(err, style){
 
-		/*function addLayer(layer, name, zIndex) {
-		    layer
-		        .setZIndex(zIndex)
-		        .addTo(map);
+		}
 
-		    // Create a simple layer switcher that
-		    // toggles layers on and off.
-		    var link = document.createElement('a');
-		        link.href = '#';
-		        link.className = 'active';
-		        link.innerHTML = name;
-
-		    link.onclick = function(e) {
-		        e.preventDefault();
-		        e.stopPropagation();
-
-		        if (map.hasLayer(layer)) {
-		            map.removeLayer(layer);
-		            this.className = '';
-		        } else {
-		            map.addLayer(layer);
-		            this.className = 'active';
-		        }
-		    };
-
-		    layers.appendChild(link);
-		}*/
 	}
 };
 

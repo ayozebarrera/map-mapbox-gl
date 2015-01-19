@@ -1,0 +1,159 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Madeira",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.98486328125,
+          32.99023555965106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Azores",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -26.34521484375,
+          38.805470223177466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Islas Canarias",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.886230468750002,
+          28.94086176940554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cabo Verde",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.88427734375,
+          17.014767530557833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Gran Canaria",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.732421875,
+          28.205188168057337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Tenerife",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.21856689453125,
+          28.386567819657213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "La Gomera",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.4078369140625,
+          28.2027676859484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "El Hierro",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.0889892578125,
+          27.824502916144823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "La Palma",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.95440673828125,
+          28.543513003567337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fuerteventura",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.13665771484375,
+          28.649620345339766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Lanzarote",
+        "marker-symbol": "circle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.85101318359375,
+          29.06097140738389
+        ]
+      }
+    }
+  ]
+}
